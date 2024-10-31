@@ -7,17 +7,17 @@ public class OperationsTask {
         int b = 7;
         a++;
         b++;
-        System.out.println("After ++: a = " + a + ", b = " + b);
+        System.out.println("After:" + a + ",b = " + b);
 
         a--;
         b--;
-        System.out.println("Before --: a = " + a + ", b = " + b);
+        System.out.println("Before: " + a + ", b = " + b);
 
         a += 2;
-        System.out.println("Before +=: a = " + a);
+        System.out.println("Before:" + a);
 
         b -= 1;
-        System.out.println("Before -=: b = " + b);
+        System.out.println("Before:" + b);
 
         int x = 8;
         int y = 5;
@@ -35,19 +35,20 @@ public class OperationsTask {
         int r = 5;
 
         l *= 2;
-        System.out.println("L after *= 2: " + l);
+        System.out.println("L after : " + l);
 
         l /= r;
-        System.out.println("L after /= r: " + l);
+        System.out.println("L after:" + l);
 
         l %= 3;
-        System.out.println("L after %= 3: " + l);
+        System.out.println("L after:" + l);
 
         boolean isLessOrEqual = (l <= r);
         boolean isGreaterOrEqual = (l >= r);
 
-        System.out.println("Is l <= r? " + isLessOrEqual);
-        System.out.println("Is l >= r? " + isGreaterOrEqual);
+        System.out.println("Is l <= r " + isLessOrEqual);
+        System.out.println("Is l >= r " + isGreaterOrEqual);
+
 
     }
 }
