@@ -3,14 +3,28 @@ package az.edu.turing.module01.lesson03;
 import java.util.Scanner;
 
 public class ScannerTask {
+
     public static void main(String[] args) {
 
-        Scanner scan = new Scanner(System.in);
-        System.out.print("Enter a number: \t");
-        int number = scan.nextInt();
-        System.out.println("Number is: " + number);
-        System.out.print("Even true, odd false: \t");
-        System.out.print(number % 2 == 0 && true || false);
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.print("Please enter a number: ");
+        int number = scanner.nextInt();
+
+        if (number % 2 == 0) {
+            System.out.println("The number is even.");
+        } else {
+            System.out.println("The number is odd.");
+        }
+
+        if (number > 0) {
+            System.out.println("The number is positive.");
+        } else if (number < 0) {
+            System.out.println("The number is negative.");
+        } else {
+            System.out.println("The number is zero.");
+        }
+
+        scanner.close();
     }
 }
