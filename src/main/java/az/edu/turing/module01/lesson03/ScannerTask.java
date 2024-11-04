@@ -17,14 +17,13 @@ public class ScannerTask {
             System.out.println("The number is odd.");
         }
 
-        if (number > 0) {
-            System.out.println("The number is positive.");
-        } else if (number < 0) {
+        if (number < 0) {
             System.out.println("The number is negative.");
+        } else if (number > 0) {
+            System.out.println("The number is positive.");
         } else {
             System.out.println("The number is zero.");
         }
-
         scanner.close();
     }
 }
