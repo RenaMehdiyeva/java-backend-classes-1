@@ -7,7 +7,7 @@ public class BucksInTheBankApp {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        long S = 15;
+        long S = scanner.nextLong();
         long totalAmount = 1;
         long amountGivenLastYear = 1;
         int N = 0;
