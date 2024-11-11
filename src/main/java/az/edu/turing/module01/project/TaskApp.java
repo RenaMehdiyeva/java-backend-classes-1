@@ -1,5 +1,6 @@
 package az.edu.turing.module01.project;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TaskApp {
@@ -8,7 +9,7 @@ public class TaskApp {
 
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
-        int[][] arr = new int[a][a];
+        int[][] arr = new int[a][];
 
         for (int i = 0; i < a; i++) {
             for (int j = 0; j <= i; j++) {
@@ -21,5 +22,6 @@ public class TaskApp {
             }
             System.out.println();
         }
+        System.out.println(Arrays.deepToString(arr));
     }
 }
