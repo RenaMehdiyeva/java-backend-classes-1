@@ -15,7 +15,7 @@ public class LastCharacterVowelCheckApp {
     }
 
     public static boolean isVowel(char ch) {
-        ch = Character.toLowerCase(ch);  // Convert to lowercase for easy comparison
+        ch = Character.toLowerCase(ch);
         return "aeiou".indexOf(ch) != -1;
     }
 }
