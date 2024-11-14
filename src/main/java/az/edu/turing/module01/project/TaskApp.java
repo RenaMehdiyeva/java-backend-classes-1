@@ -13,7 +13,7 @@ public class TaskApp {
 
         for (int i = 0; i < a; i++) {
             for (int j = 0; j <= i; j++) {
-                arr[i][j] = i + 1;
+                 arr[i][j] = i + 1;
             }
         }
         for (int i = 0; i < a; i++) {

@@ -6,48 +6,47 @@ import java.util.Random;
 public class NumberGameApp {
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
-        int targetNumber = random.nextInt(101);
+        int hiddenNumber = random.nextInt(101);
         System.out.println("Let the game begin!");
         System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
+        String playerName = scanner.nextLine();
 
-        int[] guesses = new int[100];
-        int guessCount = 0;
+        int[] attempts = new int[100];
+        int attemptsCount = 0;
+
         while (true) {
             System.out.print("Enter your guess: ");
-            int userGuess;
+            int playerGuess;
 
             while (true) {
                 if (scanner.hasNextInt()) {
-                    userGuess = scanner.nextInt();
+                    playerGuess = scanner.nextInt();
+                    attempts[attemptsCount++] = playerGuess;
                     break;
-                } else {
+                }else {
                     System.out.print("Invalid input. Please enter a valid number: ");
                     scanner.next();
                 }
             }
-
-            if (userGuess < targetNumber) {
+            if (playerGuess < hiddenNumber) {
                 System.out.println("Your number is too small. Please, try again..");
-            } else if (userGuess > targetNumber) {
+            }else if (playerGuess > hiddenNumber) {
                 System.out.println("Your number is too big. Please, try again..");
-            } else {
-                System.out.println("Congratulations, " + name + "!");
+            }else {
+                System.out.println("Congratulations, " + playerName + "!");
                 break;
             }
         }
         System.out.print("Your numbers: ");
-        sortDescending(guesses, guessCount);
-        for (int i = 0; i < guessCount; i++) {
-            System.out.print(guesses[i] + " ");
+        sortArrayDesc(attempts, attemptsCount);
+        for (int i = 0; i < attemptsCount; i++) {
+            System.out.print(attempts[i] + " ");
         }
     }
-
-    private static void sortDescending(int[] array, int length) {
+    private static void sortArrayDesc(int[] array, int length) {
         for (int i = 0; i < length - 1; i++) {
             for (int j = i + 1; j < length; j++) {
                 if (array[i] < array[j]) {
