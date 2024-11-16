@@ -12,6 +12,7 @@ public class TaskApp {
         int[][] arr = new int[a][];
 
         for (int i = 0; i < a; i++) {
+            arr[i] = new int[i+1];
             for (int j = 0; j <= i; j++) {
                  arr[i][j] = i + 1;
             }
@@ -22,6 +23,6 @@ public class TaskApp {
             }
             System.out.println();
         }
-        System.out.println(Arrays.deepToString(arr));
+       System.out.println(Arrays.deepToString(arr));
     }
 }
