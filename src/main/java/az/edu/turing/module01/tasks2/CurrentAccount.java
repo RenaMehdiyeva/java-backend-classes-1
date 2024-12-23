@@ -7,20 +7,23 @@ public class CurrentAccount extends BankAccount {
         super(accountHolder, balance, accountNumber);
         this.overdraftLimit = overdraftLimit;
     }
+
+    public double getOverdraftLimit() {
+        return overdraftLimit;
+    }
+
+    public void setOverdraftLimit(double overdraftLimit) {
+        this.overdraftLimit = overdraftLimit;
+    }
+
     public void withdraw(double amount) {
         if (getBalance() - amount >= -overdraftLimit) {
-            double initialBalance = getBalance();
-            super.withdraw(amount);
-            if (initialBalance < amount) {
-                System.out.println("Overdraft was used.");
-            }
-        } else {
-            System.out.println("Overdraft limit exceeded!");
+            setBalance(getBalance() - amount);
         }
     }
+
     public void displayInfo() {
         super.displayInfo();
-        System.out.println("Overdraft limit: " + overdraftLimit + " AZN");
+        System.out.println("Overdraft Limit: " + overdraftLimit);
     }
 }
-

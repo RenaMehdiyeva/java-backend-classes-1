@@ -4,27 +4,29 @@ public class BankAccountApp {
 
     public static void main(String[] args) {
 
-        SavingsAccount savings1 = new SavingsAccount("Rena Mehdiyeva", 3000, 205, 8.4);
-        SavingsAccount savings2 = new SavingsAccount("Lale Hamidova", 2500, 204, 7.8);
-        CurrentAccount current1 = new CurrentAccount("Aynur Mammedova", 4200, 103, 5.7);
-        CurrentAccount current2 = new CurrentAccount("Dilber Mirzoyeva", 3600, 105, 4.8);
-        BankAccount generalAccount = new BankAccount("Vusal Atashov", 7000, 101);
-
-        BankAccount[] accounts = {savings1, savings2, current1, current2, generalAccount};
+        BankAccount[] accounts = new BankAccount[5];
+        accounts[0] = new SavingsAccount("Rena Mehdiyeva", 1000, 1, 1.5);
+        accounts[1] = new SavingsAccount("Lale Hamidova", 2000, 2, 2.0);
+        accounts[2] = new CurrentAccount("Aynur Mammadova", 1500, 3, 500);
+        accounts[3] = new CurrentAccount("Dilber Mirzoyeva", 3000, 4, 1000);
+        accounts[4] = new BankAccount("Vusal Atashov", 500, 5);
 
         for (BankAccount account : accounts) {
             account.displayInfo();
-            System.out.println("--------------------");
+            System.out.println();
         }
 
-        savings1.withdraw(500);
-        savings2.applyInterest();
-        current1.withdraw(800);
-        current2.deposit(400);
+        accounts[0].withdraw(100);
+        accounts[1].deposit(500);
+        accounts[2].withdraw(1800);
+        accounts[3].transfer(accounts[4], 200);
 
+        ((SavingsAccount) accounts[0]).applyInterest();
 
-        savings1.transfer(current1, 250);
-        generalAccount.transfer(savings2, 150);
+        System.out.println("After Transactions:");
+        for (BankAccount account : accounts) {
+            account.displayInfo();
+            System.out.println();
+        }
     }
 }
-

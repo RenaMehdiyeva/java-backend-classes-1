@@ -1,5 +1,7 @@
 package az.edu.turing.module01.tasks2;
 
+import java.util.Objects;
+
 public class BankAccount {
     private String accountHolder;
     private double balance;
@@ -15,44 +17,60 @@ public class BankAccount {
         return accountHolder;
     }
 
+    public void setAccountHolder(String accountHolder) {
+        this.accountHolder = accountHolder;
+    }
+
     public double getBalance() {
         return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
     }
 
     public int getAccountNumber() {
         return accountNumber;
     }
 
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println(accountHolder + " for " + amount + " AZN deposited.");
-        } else {
-            System.out.println("The amount is incorrect!");
         }
     }
 
     public void withdraw(double amount) {
         if (amount > 0 && balance >= amount) {
             balance -= amount;
-            System.out.println(accountHolder + " for " + amount + " AZN was withdrawn.");
-        } else {
-            System.out.println("Insufficient balance for withdrawal!");
         }
     }
+
     public void transfer(BankAccount recipient, double amount) {
         if (amount > 0 && balance >= amount) {
             this.withdraw(amount);
             recipient.deposit(amount);
-            System.out.println(accountHolder + " account " + amount + " transferred AZN: " + recipient.getAccountHolder());
-        } else {
-            System.out.println("Transfer is not possible!");
         }
     }
+
     public void displayInfo() {
-        System.out.println("Account holder: " + accountHolder);
-        System.out.println("Account number: " + accountNumber);
-        System.out.println("Current balance: " + balance + " AZN");
+        System.out.println("Account Holder: " + accountHolder);
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Balance: " + balance);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BankAccount that = (BankAccount) o;
+        return accountNumber == that.accountNumber;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(accountNumber);
     }
 }
-
