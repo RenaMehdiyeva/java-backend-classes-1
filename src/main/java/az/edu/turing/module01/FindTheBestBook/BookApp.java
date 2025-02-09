@@ -10,7 +10,7 @@ public class BookApp {
                 new Book("Dune", "Frank Herbert", "Sci-Fi", 12.50, 4.8),
                 new Book("Sapiens", "Yuval Noah Harari", "Non-Fiction", 15.00, 4.7),
                 new Book("The Hobbit", "J.R.R. Tolkien", "Fiction", 9.50, 4.8),
-                new Book("Brave New World", "Aldous Huxley", "Fiction", 11.99, 4.6)
+                new Book("Brave New World ", "Aldous Huxley", "Fiction", 11.99, 4.6)
         );
 
         List<Book> affordableBooks = books.stream()
